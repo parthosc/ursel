@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <!-- Link Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- Link FancyBox's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  <!-- Link AOS Animation's CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Link Main's CSS -->
+  <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+<script>
+  const data = [
+    {
+      title: "Chi Gong Exercise: The microcosmic orbit",
+      videoUrl: "https://youtu.be/D0UnqGm_miA",
+      img1: "./assets/images/label1.png",
+      img2: "./assets/images/label2.png",
+      img3: "./assets/images/label3.png",
+      labels: ["label1", "label2", "label3"],
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing lectus etiam sociis praesent.",
+      id: "1",
+    },
+    {
+      title: "What is Chi (Qi) Gong? Introduction",
+      videoUrl: "https://youtu.be/D0UnqGm_miA",
+      img1: "./assets/images/label4.png",
+      img2: "./assets/images/label1.png",
+      labels: ["label4", "label1"],
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing lectus etiam sociis praesent.",
+      id: "2",
+    },
+    {
+      title: "Chi Gong Exercise: Shining light upon the heart",
+      videoUrl: "https://youtu.be/D0UnqGm_miA",
+      img1: "./assets/images/label5.png",
+      img2: "./assets/images/label2.png",
+      img3: "./assets/images/label1.png",
+      img4: "./assets/images/label4.png",
+      labels: ["label5", "label2", "label1", "label4"],
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing lectus etiam sociis praesent.",
+      id: "3",
+    },
+    {
+      title: "Chi Gong Exercise: The microcosmic orbit",
+      videoUrl: "https://youtu.be/D0UnqGm_miA",
+      img1: "./assets/images/label1.png",
+      img2: "./assets/images/label2.png",
+      img3: "./assets/images/label3.png",
+      labels: ["label1", "label2", "label3"],
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing lectus etiam sociis praesent.",
+      id: "4",
+    },
+    {
+      title: "What is Chi (Qi) Gong? Introduction",
+      videoUrl: "https://youtu.be/D0UnqGm_miA",
+      img1: "./assets/images/label4.png",
+      img2: "./assets/images/label1.png",
+      labels: ["label4", "label1"],
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing lectus etiam sociis praesent.",
+      id: "5",
+    },
+    {
+      title: "Chi Gong Exercise: Shining light upon the heart",
+      videoUrl: "https://youtu.be/D0UnqGm_miA",
+      img1: "./assets/images/label5.png",
+      img2: "./assets/images/label2.png",
+      img3: "./assets/images/label1.png",
+      img4: "./assets/images/label4.png",
+      labels: ["label5", "label2", "label1", "label4"],
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing lectus etiam sociis praesent.",
+      id: "6",
+    },
+  ];
+</script>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./assets/images/logo-icon.svg" alt="logo" />
+          Qi Gong • Coaching • Retreats
+        </a>
+      </div>
+      <div class="nav-container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample">
+          <img src="./assets/images/nav-toggle.svg" alt="" />
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header justify-content-end">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navBarTitle">
+              <li>
+                <a href="./index.html">HOME</a>
+              </li>
+              <li>
+                <a href="./GromeisterGong.html">DAS STILE QI GONG</a>
+              </li>
+              <li>
+                <a href="./coaching.html">COACHING</a>
+              </li>
+              <li>
+                <a href="./Ernahrung.html">ERNAHRUNG</a>
+              </li>
+              <li>
+                <a href="./ClassWork.html">ClASSES, WORKSHOPS, RETREATS</a>
+              </li>
+              <li>
+                <a href="./media.html">MEDIA</a>
+              </li>
+              <li>
+                <a href="./Empfehlungen.html">EMPFEHLUNGEN</a>
+              </li>
+              <li>
+                <a href="./Kontakt.html">KONTAKT</a>
+              </li>
+              <li>
+                <a href="./Impressum.html">IMPRESSUM</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section class="home-banner position-relative" style="
+        background: url(./assets/images/mediabackground.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: auto;
+        background-position: bottom right;
+      ">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="hb-descCoaching hb-desc" data-aos="fade-up" data-aos-duration="2000">
+            <h1 class="gong" style="text-shadow: 0px 4px 34px #000; font-size: 70px">
+              MEDIA
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="image-leftm blobm" style="background: #83aa7d">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="ha-desc auswahl" data-aos="fade-right" data-aos-duration="2000">
+            <p>
+              Ich habe eine Auswahl von Videos und Audio-Dateien mit
+              verschiedenen Übungen zusammengestellt. Man kann sie allein üben
+              oder in einer Art “Baukastensystem” zusammenstellen und
+              nacheinander praktizieren.
+            </p>
+
+            <p>
+              Je öfter und länger wir üben, desto leichter wird es, in den
+              speziellen Übungszustand, den „Qi Gong Zustand“ zu kommen, und
+              es wird sich positiv auf den Übungserfolg auswirken.
+              Regelmäßiges Praktizieren führt zu einem Weg der
+              Selbstkultivierung, und wir verändern uns auf tiefster Ebene.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6" style="margin: 32px 0 33.79px 0">
+          <div class="ha-img text-end">
+            <img src="./assets/images/mediaShape (2).png" class="img-fluid rounded-after" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <p class="videosTitle">VIDEOS</p>
+    <section class="home-video">
+      <div class="container">
+        <div class="row" id="video-container"></div>
+      </div>
+    </section>
+    <script>
+      {
+        data.forEach((item, index) => {
+          const cardEl = document.createElement("div");
+          cardEl.setAttribute("class", "col-lg-4");
+          cardEl.innerHTML = `
+                    <div class="hv-box text-center" data-aos="fade-up" data-aos-duration="2000" key="${index}">
+                        <div class="hv-video position-relative">
+                            <img src="./assets/images/vid-img.jpg" alt="" />
+                            <a class="vid-btn" href="${item.videoUrl}" data-fancybox="">
+                                <img src="./assets/images/vid-btn.svg" alt="" />
+                            </a>
+                        </div>
+                        <div class="hv-title-labels">
+                            <p>${item.title}</p>
+                            <div class="labels d-flex align-items-center justify-content-center">
+                                <img src="${item.img1}" alt="" />
+                                <img src="${item.img2}" alt="" />
+                                <img src="${item.img3}" alt="" />
+                                <img src="${item.img4}" alt="" />
+                            </div>
+                        </div>
+                        <p>${item.description}</p>
+                    </div>
+                `;
+          document.getElementById("video-container").appendChild(cardEl);
+        });
+      }
+    </script>
+    <div class="col-12 text-center weitereButton">
+      <a href="#" class="btn btn-primary">Weitere Videos</a>
+    </div>
+  </section>
+  <section class="home-video" style="background: #eee6d8">
+    <div class="container">
+      <div class="row audioCardGroup">
+        <p class="audioTitle">AUDIO</p>
+        <div class="col-lg-4 audioC" style="background: #ffffff;">
+          <div class="text-center" data-aos="fade-up" data-aos-duration="2000">
+            <div class="position-relative">
+              <img src="./assets/images/audio.png" alt="" />
+            </div>
+            <div>
+              <p class="audioLabel">
+                Chi Gong Exercise: The microcosmic orbit
+              </p>
+              <div class="audioElementIcon">
+                <img src="./assets/images/label1.png" alt="" />
+                <img src="./assets/images/label2.png" alt="" />
+                <img src="./assets/images/label3.png" alt="" />
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus
+              aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam
+              maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing
+              lectus etiam sociis praesent.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 audioC" style="background: #ffffff;">
+          <div class="text-center" data-aos="fade-up" data-aos-duration="2000">
+            <div class="position-relative">
+              <img src="./assets/images/audio.png" alt="" />
+            </div>
+            <div>
+              <p class="audioLabel">
+                Chi Gong Exercise: The microcosmic orbit
+              </p>
+              <div class="audioElementIcon">
+                <img src="./assets/images/label4.png" alt="" />
+                <img src="./assets/images/label1.png" alt="" />
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus
+              aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam
+              maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing
+              lectus etiam sociis praesent.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 audioC" style="background: #ffffff;">
+          <div class="text-center" data-aos="fade-up" data-aos-duration="2000">
+            <div class="position-relative">
+              <img src="./assets/images/audio.png" alt="" />
+            </div>
+            <div>
+              <p class="audioLabel">
+                Chi Gong Exercise: The microcosmic orbit
+              </p>
+              <div class="audioElementIcon">
+                <img src="./assets/images/label5.png" alt="" />
+                <img src="./assets/images/label2.png" alt="" />
+                <img src="./assets/images/label1.png" alt="" />
+                <img src="./assets/images/label4.png" alt="" />
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus
+              aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam
+              maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing
+              lectus etiam sociis praesent.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 audioC" style="background: #ffffff;">
+          <div class="text-center" data-aos="fade-up" data-aos-duration="2000">
+            <div class="position-relative">
+              <img src="./assets/images/audio.png" alt="" />
+            </div>
+            <div>
+              <p class="audioLabel">
+                Chi Gong Exercise: The microcosmic orbit
+              </p>
+              <div class="audioElementIcon">
+                <img src="./assets/images/label1.png" alt="" />
+                <img src="./assets/images/label2.png" alt="" />
+                <img src="./assets/images/label3.png" alt="" />
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus
+              aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam
+              maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing
+              lectus etiam sociis praesent.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 audioC" style="background: #ffffff;">
+          <div class="text-center" data-aos="fade-up" data-aos-duration="2000">
+            <div class="position-relative">
+              <img src="./assets/images/audio.png" alt="" />
+            </div>
+            <div>
+              <p class="audioLabel">
+                Chi Gong Exercise: The microcosmic orbit
+              </p>
+              <div class="audioElementIcon">
+                <img src="./assets/images/label4.png" alt="" />
+                <img src="./assets/images/label1.png" alt="" />
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus
+              aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam
+              maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing
+              lectus etiam sociis praesent.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 audioC" style="background: #ffffff;">
+          <div class="text-center" data-aos="fade-up" data-aos-duration="2000">
+            <div class="position-relative">
+              <img src="./assets/images/audio.png" alt="" />
+            </div>
+            <div>
+              <p class="audioLabel">
+                Chi Gong Exercise: The microcosmic orbit
+              </p>
+              <div class="audioElementIcon">
+                <img src="./assets/images/label5.png" alt="" />
+                <img src="./assets/images/label2.png" alt="" />
+                <img src="./assets/images/label1.png" alt="" />
+                <img src="./assets/images/label4.png" alt="" />
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Ultricies neque mi lacus
+              aliquam lectus justo. Lectus a erat mi sit dolor morbi orci quam
+              maecenas. Sed morbi senectus id euismod vel. Iaculis adipiscing
+              lectus etiam sociis praesent.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 text-center">
+        <a href="#" class="btn btn-primary weitereVideos">Weitere AudioFILES</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container" data-aos="fade-up" data-aos-duration="2000">
+      <div class="row align-items-start">
+        <div class="col-lg-2">
+          <div class="ft-logo">
+            <a href="#">
+              <img src="./assets/images/footer-logo.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="footer-nav">
+            <ul class="footers">
+              <li>
+                <a href="./index.html">HOME</a>
+              </li>
+              <li>
+                <a href="./GromeisterGong.html">DAS STILE QI GONG</a>
+              </li>
+              <li>
+                <a href="./coaching.html">COACHING</a>
+              </li>
+              <li>
+                <a href="./Ernahrung.html">ERNAHRUNG</a>
+              </li>
+              <li>
+                <a href="./ClassWork.html">ClASSES, WORKSHOPS, RETREATS</a>
+              </li>
+              <li>
+                <a href="./media.html">MEDIA</a>
+              </li>
+              <li>
+                <a href="./Empfehlungen.html">EMPFEHLUNGEN</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="footer-nav">
+            <ul class="footers">
+              <li>
+                <a href="./Kontakt.html">KONTAKT</a>
+              </li>
+              <li>
+                <a href="./Impressum.html">IMPRESSUM</a>
+              </li>
+              <li>
+                <a href="./Impressum.html">DATENSCHUTZERKLÄRUNG</a>
+              </li>
+              <li>
+                <a href="./Kontakt.html">NEWSLETTER ANMELDUNG/ABMELDUNG</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+  <!-- FancyBox's JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <!-- AOS Animation's JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Main's JS -->
+  <script src="./assets/js/custom.js"></script>
+  <script>
+    // AOS.init();
+    AOS.init({
+      disable: function () {
+        var maxWidth = 768;
+        return window.innerWidth < maxWidth;
+      },
+    });
+
+    $(document).ready(function () {
+      // Function to show the sidebar and hide the navbar-toggler button
+      function showSidebar() {
+        $(".offcanvas").addClass("show");
+        $(".navbar-toggler").hide();
+      }
+
+      // Function to hide the sidebar and show the navbar-toggler button
+      function hideSidebar() {
+        $(".offcanvas").removeClass("show");
+        $(".navbar-toggler").show();
+      }
+
+      $(window).resize(e => hideSidebar())
+
+      // Event listener for the navbar-toggler button
+      $(".navbar-toggler").click(function () {
+        showSidebar();
+      });
+
+      // Event listener for the close button inside the sidebar
+      $(".offcanvas .btn-close").click(function () {
+        hideSidebar();
+      });
+
+      // Close the sidebar when clicking outside of it
+      $(document).click(function (e) {
+        if (!$(".offcanvas").is(e.target) && $(".offcanvas").has(e.target).length === 0 && $(".navbar-toggler").has(e.target).length === 0) {
+          hideSidebar();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
